@@ -11,10 +11,22 @@ const Navigation = () => {
         <Stack.Screen
           name="Pokemons"
           component={PokemonListScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#061a3b',
+            },
+            headerTintColor: '#fff',
+          }}
         />
         <Stack.Screen
           name="Pokemon"
           component={PokemonDeailScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#061a3b',
+            },
+            headerTintColor: '#fff',
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
