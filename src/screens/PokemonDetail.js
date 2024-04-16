@@ -1,11 +1,14 @@
-import { ActivityIndicator, Button, ScrollView } from "react-native";
+import { ActivityIndicator, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
-import { getPokemonDetailsApi } from "../api/pokemon";
 import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
 import Stats from "../components/Pokemon/Stats";
+import { useDispatch } from 'react-redux';
+import { fetchPokemonDetailsApi } from '../redux/api/dataSlice';
 
 const Pokemon = (props) => {
+  const dispatch = useDispatch();
+
   const {
     route: { params },
     navigation,
@@ -22,8 +25,9 @@ const Pokemon = (props) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await getPokemonDetailsApi(params.id);
-        setPokemon(response);
+        await dispatch(fetchPokemonDetailsApi(params.id)).then(async(res) => {
+          setPokemon(res.payload);
+        });
       } catch (error) {
         navigation.goBack();
       }

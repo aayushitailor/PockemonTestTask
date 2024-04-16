@@ -7,15 +7,15 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-// import store from './src/redux/store/store'; // Import the Redux store
-import Navigation from './src/navigation/Navigation'; // Your main app component
+import store from './src/redux/store/store'; 
+import Navigation from './src/navigation/Navigation'; 
 
 const App = () => {
   
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
       <Navigation />
-    // </Provider>
+    </Provider>
   );
 };
 

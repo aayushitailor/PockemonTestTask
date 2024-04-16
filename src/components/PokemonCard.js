@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableWithoutFeedback, } from "react-native";
+import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import { capitalize } from "lodash";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
